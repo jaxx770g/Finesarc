@@ -7,7 +7,7 @@ import {
   Zap,
 } from "lucide-react";
 
-// Stats Data
+
 export const statsData = [
   {
     value: "50K+",
@@ -63,7 +63,7 @@ export const featuresData = [
   },
 ];
 
-// How It Works Data
+
 export const howItWorksData = [
   {
     icon: <CreditCard className="w-8 h-8 text-blue-600" />,
@@ -85,7 +85,7 @@ export const howItWorksData = [
   },
 ];
 
-// Testimonials Data
+
 export const testimonialsData = [
   {
     name: "Sarah Johnson",

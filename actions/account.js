@@ -67,7 +67,7 @@ export async function bulkDeleteTransactions(transactionIds) {
       },
     });
 
-    // Group transactions by account to update balances
+   
     const accountBalanceChanges = transactions.reduce((acc, transaction) => {
       const change =
         transaction.type === "EXPENSE"
@@ -77,9 +77,9 @@ export async function bulkDeleteTransactions(transactionIds) {
       return acc;
     }, {});
 
-    // Delete transactions and update account balances in a transaction
+   
     await db.$transaction(async (tx) => {
-      // Delete transactions
+      
       await tx.transaction.deleteMany({
         where: {
           id: { in: transactionIds },
@@ -87,7 +87,7 @@ export async function bulkDeleteTransactions(transactionIds) {
         },
       });
 
-      // Update account balances
+    
       for (const [accountId, balanceChange] of Object.entries(
         accountBalanceChanges
       )) {
